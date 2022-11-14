@@ -1,4 +1,6 @@
 <launch>
+        <arg name="rosbag" default="False"/>
+        <group if="$(eval arg('rosbag')==False)">
         <node pkg="part9_ex5" name="Publisher_A" type="Publisher.py">
                 <param name="topic_name" value="dog_1"/>
                 <param name="frequency" value="1"/>
@@ -11,6 +13,12 @@
                 <param name="topic_name" value="dog_2"/>
                 <param name="frequency" value="3"/>
         </node>
+        <node pkg="part9_ex5" name="rosbag_write" type="rosbag_write.py"></node>
+        </group>
+
+        <group if="$(eval arg('rosbag')==True)">
+        <node pkg="part9_ex5" name="rosbag_read" type="rosbag_read.py" output="screen"></node>
+        </group>
 
         <node pkg="part9_ex5" name="Subscriber_AB1" type="subscriber.py" output="screen">
                 <param name="topic_name" value="dog_1"/>
