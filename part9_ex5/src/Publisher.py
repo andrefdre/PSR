@@ -9,13 +9,14 @@ def main():
     dog.name='Luffy'
     dog.color='black'
     dog.age=2
-    dog.brothers.append='Ace'
-    pub = rospy.Publisher('chatter', String, queue_size=10)
-    rospy.init_node('talker', anonymous=True)
-    rate = rospy.Rate(10) # 10hz
+    dog.brothers.append('Ace')
+    rospy.init_node("Publisher", anonymous=True)
+    topic_name=rospy.get_param("~topic_name")
+    frequency=rospy.get_param("~frequency")
+    pub = rospy.Publisher(topic_name, Dog, queue_size=10)
+    rate = rospy.Rate(frequency)
 
     while not rospy.is_shutdown():
-
         pub.publish(dog)
         rate.sleep()
 

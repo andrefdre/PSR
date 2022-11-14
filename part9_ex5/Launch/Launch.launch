@@ -1,0 +1,27 @@
+<launch>
+        <node pkg="part9_ex5" name="Publisher_A" type="Publisher.py">
+                <param name="topic_name" value="dog_1"/>
+                <param name="frequency" value="1"/>
+        </node>
+        <node pkg="part9_ex5" name="Publisher_B" type="Publisher.py">
+                <param name="topic_name" value="dog_1"/>
+                <param name="frequency" value="3"/>
+        </node>
+        <node pkg="part9_ex5" name="Publisher_C" type="Publisher.py">
+                <param name="topic_name" value="dog_2"/>
+                <param name="frequency" value="3"/>
+        </node>
+
+        <node pkg="part9_ex5" name="Subscriber_AB1" type="subscriber.py" output="screen">
+                <param name="topic_name" value="dog_1"/>
+        </node>
+
+        <node pkg="part9_ex5" name="Subscriber_AB2" type="subscriber.py" output="screen">
+                <param name="topic_name" value="dog_1"/>
+        </node> 
+        <node pkg="part9_ex5" name="Subscriber_C" type="subscriber.py" output="screen">
+                <param name="topic_name" value="dog_2"/>
+        </node>         
+
+
+</launch>

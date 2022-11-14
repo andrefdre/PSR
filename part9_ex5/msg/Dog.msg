@@ -1,4 +1,4 @@
-string new_name
+string name
 string color
 int8 age
 string[] brothers
