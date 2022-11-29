@@ -18,6 +18,19 @@ def callback(msg,publisher):
               PointField('y', 4, PointField.FLOAT32, 1),
               PointField('z', 8, PointField.FLOAT32, 1)]
 
+    #Clustering
+    clusters
+    for idx in range(1, len(msg.ranges)):
+        r_indx=msg.ranges[idx]
+        r_idx_prev=msg.ranges[idx-1]
+        theta = msg.angle_min + idx * msg.angle_increment
+
+        x = r * math.cos(alpha)
+        y = r * math.sin(alpha)
+        z = 0
+        points.append([x,y,z])
+
+
     # Create a list of xyz coords
     points = []
     for idx in range(0, len(msg.ranges)):
