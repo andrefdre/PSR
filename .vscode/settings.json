@@ -4,5 +4,10 @@
         "/home/andre/catkin_ws/devel/lib/python3/dist-packages",
         "/opt/ros/noetic/lib/python3/dist-packages",
         "/home/andre/catkin_ws/src/synfeal"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/andre/catkin_ws/devel/lib/python3/dist-packages",
+        "/opt/ros/noetic/lib/python3/dist-packages",
+        "/home/andre/catkin_ws/src/synfeal"
     ]
 }

@@ -1,0 +1,27 @@
+<robot name="test_robot">
+    <link name="base_link" />
+    <link name="link1" />
+    <link name="link2" />
+    <link name="link3" />
+  
+    <joint name="joint1" type="continuous">
+      <parent link="base_link"/>
+      <child link="link1"/>
+      <axis xyz="0 0 1" />
+      <origin xyz="0 0 1" rpy="0 0 0" />
+    </joint>
+  
+    <joint name="joint2" type="continuous">
+      <parent link="link1"/>
+      <child link="link2"/>
+      <axis xyz="0 0 1" />
+      <origin xyz="1 0 0" rpy="0 0 0" />
+    </joint>
+  
+    <joint name="joint3" type="prismatic">
+      <parent link="link2"/>
+      <child link="link3"/>
+      <limit effort="1000.0" lower="0.0" upper="0.548" velocity="0.5"/>
+      <origin xyz="1 0 0" rpy="0 1.57 0" />
+    </joint>
+  </robot>
