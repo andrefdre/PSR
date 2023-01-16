@@ -13,6 +13,7 @@
         <arg name="gui" value="true"/>
         <arg name="headless" value="false"/>
         <arg name="debug" value="false"/>
+        <arg name="verbose" value="true"/>
     </include>
 
     <!--Bloco 3: Carregamento do xacro do robot para o parâmetro robot_description.-->
